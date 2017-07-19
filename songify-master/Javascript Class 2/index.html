@@ -21,7 +21,7 @@
         <div class="main ">
         <header> <div class="right floated user-name">  </div> </header>
         <section class="content">
-		<audio src="song.mp3" controls=""></audio>
+		<audio src="song.mp3" ></audio>
         </section>
         <footer> 
         <div class="controls">
@@ -33,19 +33,39 @@
     <script src="jquery.js">
     </script>
     <script>
-	
-$('.welcome-screen button').on('click', function() {
-var name = $('#name-input').val();
-if(name.length > 2) {
-var message = "Welcome, " +  name;
-$('.main .user-name').text(message);
-$('.welcome-screen').addClass('hidden');
-$('.main').removeClass('hidden');
+$('.play-icon').on('click',function() {
+var song = document.querySelector('audio');
+if(song.paused == true) {
+console.log('Playing');
+$('.play-icon').removeClass('fa-play');
+$('.play-icon').addClass('fa-pause');
+song.play();
 }
 else {
-$('#name-input').addClass('error');
+console.log('Pausing');
+$('.play-icon').removeClass('fa-pause');
+$('.play-icon').addClass('fa-play');
+song.pause();
 }
-});
+}); 
+  $('body').on('keypress',function(event) {
+if (event.keyCode == 32)
+{
+var song = document.querySelector('audio');
+if(song.paused == true) {
+console.log('Playing');
+$('.play-icon').removeClass('fa-play').addClass('fa-pause');
+song.play();
+}
+else {
+console.log('Pausing');
+$('.play-icon').removeClass('fa-pause').addClass('fa-play');
+song.pause();
+}
+}
+}); 
+ 
+         
 </script>
 </body>
 
