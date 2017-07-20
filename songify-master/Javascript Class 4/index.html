@@ -31,12 +31,21 @@
         <div> Duration </div>
         </div>
         <div class="song-list">
-        <div class="song">
+         <div class="song" id="song1">
         <span class="song-name"></span>
-        <span class="song-artist"></span>
+       <!----- <span class="song-artist"></span>
         <span class="song-album"></span>
-        <span class="song-length"></span>
+        <span class="song-length"></span>/------->
         </div>
+		<div class="song" id="song2">
+      <span  class="song-name"> </span>
+        </div>
+      <div class="song" id="song3">
+     <span  class="song-name"> </span>
+     </div>
+      <div class="song" id="song4">
+    <span  class="song-name"> </span>
+      </div>
         </div>
             </section>
             <footer>
@@ -103,9 +112,19 @@
     $('.time-elapsed').text(currentTime);
     $('.song-duration').text(duration);
 }
-	   var songName = 'Tamma Song';
-		window.onload = function() {
-		$('.song-name').text(songName);
+	 //  var songName1 = 'Tamma Song';
+	   //var songName2 = 'Humma Song';
+      // var songName3 = 'Nashe Si Chadh Gayi';
+       //var songName4 = 'The Breakup Song'
+	   var songList = ['Badri Ki Dulhania (Title Track)', 'Humma Song', 'Nashe Si Chadh Gayi', 'The Breakup Song'];
+
+       window.onload = function() {
+       $('#song1 .song-name').text(songList[0]);
+       $('#song2 .song-name').text(songList[1]);
+       $('#song3 .song-name').text(songList[2]);
+       $('#song4 .song-name').text(songList[3]);
+
+		
 		updateCurrentTime(); 
 		setInterval(function() {
 		updateCurrentTime();
